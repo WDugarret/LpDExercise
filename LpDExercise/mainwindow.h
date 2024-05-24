@@ -24,7 +24,13 @@ private slots:
 
     void on_m_ClearInputListButton_pressed();
 
+    void on_m_AscRadioButton_clicked();
+
+    void on_m_DescRadioButton_clicked();
+
 private:
     Ui::MainWindow *ui;
+
+    bool m_bAscendOrder;
 };
 #endif // MAINWINDOW_H

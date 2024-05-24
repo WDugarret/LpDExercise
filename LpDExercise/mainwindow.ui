@@ -108,6 +108,48 @@
       <string>Clear</string>
      </property>
     </widget>
+    <widget class="QGroupBox" name="m_SortOrderGroupBox">
+     <property name="geometry">
+      <rect>
+       <x>280</x>
+       <y>60</y>
+       <width>151</width>
+       <height>101</height>
+      </rect>
+     </property>
+     <property name="title">
+      <string>Sorting Order</string>
+     </property>
+     <widget class="QRadioButton" name="m_AscRadioButton">
+      <property name="geometry">
+       <rect>
+        <x>20</x>
+        <y>20</y>
+        <width>110</width>
+        <height>24</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Ascending</string>
+      </property>
+      <property name="checked">
+       <bool>true</bool>
+      </property>
+     </widget>
+     <widget class="QRadioButton" name="m_DescRadioButton">
+      <property name="geometry">
+       <rect>
+        <x>20</x>
+        <y>50</y>
+        <width>110</width>
+        <height>24</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Descending</string>
+      </property>
+     </widget>
+    </widget>
    </widget>
    <zorder>m_ProcessGroupBox</zorder>
    <zorder>m_UserInGroupBox</zorder>

@@ -16,6 +16,7 @@
 #include <QtWidgets/QMainWindow>
 #include <QtWidgets/QMenuBar>
 #include <QtWidgets/QPushButton>
+#include <QtWidgets/QRadioButton>
 #include <QtWidgets/QStatusBar>
 #include <QtWidgets/QTextEdit>
 #include <QtWidgets/QWidget>
@@ -34,6 +35,9 @@ public:
     QListWidget *m_SortedListWidget;
     QListWidget *m_InputListWidget;
     QPushButton *m_ClearInputListButton;
+    QGroupBox *m_SortOrderGroupBox;
+    QRadioButton *m_AscRadioButton;
+    QRadioButton *m_DescRadioButton;
     QMenuBar *menubar;
     QStatusBar *statusbar;
 
@@ -68,6 +72,16 @@ public:
         m_ClearInputListButton = new QPushButton(m_ProcessGroupBox);
         m_ClearInputListButton->setObjectName("m_ClearInputListButton");
         m_ClearInputListButton->setGeometry(QRect(50, 300, 93, 29));
+        m_SortOrderGroupBox = new QGroupBox(m_ProcessGroupBox);
+        m_SortOrderGroupBox->setObjectName("m_SortOrderGroupBox");
+        m_SortOrderGroupBox->setGeometry(QRect(280, 60, 151, 101));
+        m_AscRadioButton = new QRadioButton(m_SortOrderGroupBox);
+        m_AscRadioButton->setObjectName("m_AscRadioButton");
+        m_AscRadioButton->setGeometry(QRect(20, 20, 110, 24));
+        m_AscRadioButton->setChecked(true);
+        m_DescRadioButton = new QRadioButton(m_SortOrderGroupBox);
+        m_DescRadioButton->setObjectName("m_DescRadioButton");
+        m_DescRadioButton->setGeometry(QRect(20, 50, 110, 24));
         MainWindow->setCentralWidget(centralwidget);
         m_ProcessGroupBox->raise();
         m_UserInGroupBox->raise();
@@ -92,6 +106,9 @@ public:
         m_ProcessGroupBox->setTitle(QCoreApplication::translate("MainWindow", "Processing", nullptr));
         m_SortListButton->setText(QCoreApplication::translate("MainWindow", "Sort", nullptr));
         m_ClearInputListButton->setText(QCoreApplication::translate("MainWindow", "Clear", nullptr));
+        m_SortOrderGroupBox->setTitle(QCoreApplication::translate("MainWindow", "Sorting Order", nullptr));
+        m_AscRadioButton->setText(QCoreApplication::translate("MainWindow", "Ascending", nullptr));
+        m_DescRadioButton->setText(QCoreApplication::translate("MainWindow", "Descending", nullptr));
     } // retranslateUi
 
 };
