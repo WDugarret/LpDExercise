@@ -33,6 +33,7 @@ public:
     QPushButton *m_SortListButton;
     QListWidget *m_SortedListWidget;
     QListWidget *m_InputListWidget;
+    QPushButton *m_ClearInputListButton;
     QMenuBar *menubar;
     QStatusBar *statusbar;
 
@@ -64,6 +65,9 @@ public:
         m_InputListWidget = new QListWidget(m_ProcessGroupBox);
         m_InputListWidget->setObjectName("m_InputListWidget");
         m_InputListWidget->setGeometry(QRect(40, 50, 231, 241));
+        m_ClearInputListButton = new QPushButton(m_ProcessGroupBox);
+        m_ClearInputListButton->setObjectName("m_ClearInputListButton");
+        m_ClearInputListButton->setGeometry(QRect(50, 300, 93, 29));
         MainWindow->setCentralWidget(centralwidget);
         m_ProcessGroupBox->raise();
         m_UserInGroupBox->raise();
@@ -87,6 +91,7 @@ public:
         m_AddInListButton->setText(QCoreApplication::translate("MainWindow", "Add", nullptr));
         m_ProcessGroupBox->setTitle(QCoreApplication::translate("MainWindow", "Processing", nullptr));
         m_SortListButton->setText(QCoreApplication::translate("MainWindow", "Sort", nullptr));
+        m_ClearInputListButton->setText(QCoreApplication::translate("MainWindow", "Clear", nullptr));
     } // retranslateUi
 
 };

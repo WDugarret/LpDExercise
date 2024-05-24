@@ -22,6 +22,8 @@ private slots:
 
     void on_m_SortListButton_pressed();
 
+    void on_m_ClearInputListButton_pressed();
+
 private:
     Ui::MainWindow *ui;
 };
