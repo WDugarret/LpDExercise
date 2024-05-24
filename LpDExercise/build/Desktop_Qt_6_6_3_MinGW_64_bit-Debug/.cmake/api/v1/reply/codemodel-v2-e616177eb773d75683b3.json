@@ -1,0 +1,79 @@
+{
+	"configurations" : 
+	[
+		{
+			"directories" : 
+			[
+				{
+					"build" : ".",
+					"hasInstallRule" : true,
+					"jsonFile" : "directory-.-Debug-175ef84f53538def9986.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.16"
+					},
+					"projectIndex" : 0,
+					"source" : ".",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2
+					]
+				}
+			],
+			"name" : "Debug",
+			"projects" : 
+			[
+				{
+					"directoryIndexes" : 
+					[
+						0
+					],
+					"name" : "LpDExercise",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2
+					]
+				}
+			],
+			"targets" : 
+			[
+				{
+					"directoryIndex" : 0,
+					"id" : "LpDExercise::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-LpDExercise-Debug-7d0be32f7626079879cd.json",
+					"name" : "LpDExercise",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "LpDExercise_autogen::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-LpDExercise_autogen-Debug-940f8dc8ece98190a8cb.json",
+					"name" : "LpDExercise_autogen",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "LpDExercise_autogen_timestamp_deps::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-LpDExercise_autogen_timestamp_deps-Debug-cb29a5131a11eb141db6.json",
+					"name" : "LpDExercise_autogen_timestamp_deps",
+					"projectIndex" : 0
+				}
+			]
+		}
+	],
+	"kind" : "codemodel",
+	"paths" : 
+	{
+		"build" : "C:/Users/William/Documents/GitHub/LpDExercise/LpDExercise/build/Desktop_Qt_6_6_3_MinGW_64_bit-Debug",
+		"source" : "C:/Users/William/Documents/GitHub/LpDExercise/LpDExercise"
+	},
+	"version" : 
+	{
+		"major" : 2,
+		"minor" : 6
+	}
+}
