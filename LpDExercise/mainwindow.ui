@@ -66,7 +66,7 @@
      <property name="geometry">
       <rect>
        <x>310</x>
-       <y>210</y>
+       <y>240</y>
        <width>93</width>
        <height>29</height>
       </rect>
@@ -81,7 +81,7 @@
        <x>450</x>
        <y>50</y>
        <width>231</width>
-       <height>241</height>
+       <height>271</height>
       </rect>
      </property>
     </widget>
@@ -91,15 +91,15 @@
        <x>40</x>
        <y>50</y>
        <width>231</width>
-       <height>241</height>
+       <height>271</height>
       </rect>
      </property>
     </widget>
-    <widget class="QPushButton" name="m_ClearInputListButton">
+    <widget class="QPushButton" name="m_ClearListButton">
      <property name="geometry">
       <rect>
-       <x>50</x>
-       <y>300</y>
+       <x>310</x>
+       <y>290</y>
        <width>93</width>
        <height>29</height>
       </rect>
@@ -112,9 +112,9 @@
      <property name="geometry">
       <rect>
        <x>280</x>
-       <y>60</y>
+       <y>50</y>
        <width>151</width>
-       <height>101</height>
+       <height>111</height>
       </rect>
      </property>
      <property name="title">
@@ -124,7 +124,7 @@
       <property name="geometry">
        <rect>
         <x>20</x>
-        <y>20</y>
+        <y>30</y>
         <width>110</width>
         <height>24</height>
        </rect>
@@ -140,7 +140,7 @@
       <property name="geometry">
        <rect>
         <x>20</x>
-        <y>50</y>
+        <y>60</y>
         <width>110</width>
         <height>24</height>
        </rect>
@@ -149,6 +149,19 @@
        <string>Descending</string>
       </property>
      </widget>
+    </widget>
+    <widget class="QCheckBox" name="m_KeepOnlyOncecheckBox">
+     <property name="geometry">
+      <rect>
+       <x>310</x>
+       <y>170</y>
+       <width>91</width>
+       <height>24</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Only Once</string>
+     </property>
     </widget>
    </widget>
    <zorder>m_ProcessGroupBox</zorder>

@@ -11,6 +11,7 @@
 
 #include <QtCore/QVariant>
 #include <QtWidgets/QApplication>
+#include <QtWidgets/QCheckBox>
 #include <QtWidgets/QGroupBox>
 #include <QtWidgets/QListWidget>
 #include <QtWidgets/QMainWindow>
@@ -34,10 +35,11 @@ public:
     QPushButton *m_SortListButton;
     QListWidget *m_SortedListWidget;
     QListWidget *m_InputListWidget;
-    QPushButton *m_ClearInputListButton;
+    QPushButton *m_ClearListButton;
     QGroupBox *m_SortOrderGroupBox;
     QRadioButton *m_AscRadioButton;
     QRadioButton *m_DescRadioButton;
+    QCheckBox *m_KeepOnlyOncecheckBox;
     QMenuBar *menubar;
     QStatusBar *statusbar;
 
@@ -62,26 +64,29 @@ public:
         m_ProcessGroupBox->setGeometry(QRect(20, 150, 751, 351));
         m_SortListButton = new QPushButton(m_ProcessGroupBox);
         m_SortListButton->setObjectName("m_SortListButton");
-        m_SortListButton->setGeometry(QRect(310, 210, 93, 29));
+        m_SortListButton->setGeometry(QRect(310, 240, 93, 29));
         m_SortedListWidget = new QListWidget(m_ProcessGroupBox);
         m_SortedListWidget->setObjectName("m_SortedListWidget");
-        m_SortedListWidget->setGeometry(QRect(450, 50, 231, 241));
+        m_SortedListWidget->setGeometry(QRect(450, 50, 231, 271));
         m_InputListWidget = new QListWidget(m_ProcessGroupBox);
         m_InputListWidget->setObjectName("m_InputListWidget");
-        m_InputListWidget->setGeometry(QRect(40, 50, 231, 241));
-        m_ClearInputListButton = new QPushButton(m_ProcessGroupBox);
-        m_ClearInputListButton->setObjectName("m_ClearInputListButton");
-        m_ClearInputListButton->setGeometry(QRect(50, 300, 93, 29));
+        m_InputListWidget->setGeometry(QRect(40, 50, 231, 271));
+        m_ClearListButton = new QPushButton(m_ProcessGroupBox);
+        m_ClearListButton->setObjectName("m_ClearListButton");
+        m_ClearListButton->setGeometry(QRect(310, 290, 93, 29));
         m_SortOrderGroupBox = new QGroupBox(m_ProcessGroupBox);
         m_SortOrderGroupBox->setObjectName("m_SortOrderGroupBox");
-        m_SortOrderGroupBox->setGeometry(QRect(280, 60, 151, 101));
+        m_SortOrderGroupBox->setGeometry(QRect(280, 50, 151, 111));
         m_AscRadioButton = new QRadioButton(m_SortOrderGroupBox);
         m_AscRadioButton->setObjectName("m_AscRadioButton");
-        m_AscRadioButton->setGeometry(QRect(20, 20, 110, 24));
+        m_AscRadioButton->setGeometry(QRect(20, 30, 110, 24));
         m_AscRadioButton->setChecked(true);
         m_DescRadioButton = new QRadioButton(m_SortOrderGroupBox);
         m_DescRadioButton->setObjectName("m_DescRadioButton");
-        m_DescRadioButton->setGeometry(QRect(20, 50, 110, 24));
+        m_DescRadioButton->setGeometry(QRect(20, 60, 110, 24));
+        m_KeepOnlyOncecheckBox = new QCheckBox(m_ProcessGroupBox);
+        m_KeepOnlyOncecheckBox->setObjectName("m_KeepOnlyOncecheckBox");
+        m_KeepOnlyOncecheckBox->setGeometry(QRect(310, 170, 91, 24));
         MainWindow->setCentralWidget(centralwidget);
         m_ProcessGroupBox->raise();
         m_UserInGroupBox->raise();
@@ -105,10 +110,11 @@ public:
         m_AddInListButton->setText(QCoreApplication::translate("MainWindow", "Add", nullptr));
         m_ProcessGroupBox->setTitle(QCoreApplication::translate("MainWindow", "Processing", nullptr));
         m_SortListButton->setText(QCoreApplication::translate("MainWindow", "Sort", nullptr));
-        m_ClearInputListButton->setText(QCoreApplication::translate("MainWindow", "Clear", nullptr));
+        m_ClearListButton->setText(QCoreApplication::translate("MainWindow", "Clear", nullptr));
         m_SortOrderGroupBox->setTitle(QCoreApplication::translate("MainWindow", "Sorting Order", nullptr));
         m_AscRadioButton->setText(QCoreApplication::translate("MainWindow", "Ascending", nullptr));
         m_DescRadioButton->setText(QCoreApplication::translate("MainWindow", "Descending", nullptr));
+        m_KeepOnlyOncecheckBox->setText(QCoreApplication::translate("MainWindow", "Only Once", nullptr));
     } // retranslateUi
 
 };

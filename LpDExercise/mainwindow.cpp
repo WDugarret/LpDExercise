@@ -14,7 +14,6 @@ MainWindow::~MainWindow()
     delete ui;
 }
 
-
 ////////////////////////////////
 /// \brief Slot to add a text in the input list
 ///
@@ -25,6 +24,7 @@ void MainWindow::on_m_AddInListButton_pressed()
 
     //clear the text edit for next input
     ui->m_UserInEditText->clear();
+
 }
 
 ////////////////////////////////
@@ -33,29 +33,25 @@ void MainWindow::on_m_AddInListButton_pressed()
 void MainWindow::on_m_SortListButton_pressed()
 {
     //initialize the sorted list
-    ui->m_SortedListWidget->clear();
+    this->doClearList(ui->m_SortedListWidget);
 
     //Let's copy input list to keep it if necessary in a later time
-    for(int idx=0;idx<ui->m_InputListWidget->count();idx++)
-    {
-        //get an item  from the input list
-        QListWidgetItem* item = ui->m_InputListWidget->item(idx);
+    this->doCopyList(ui->m_InputListWidget,ui->m_SortedListWidget);
 
-        //copy to the sorted list first
-        ui->m_SortedListWidget->addItem(item->text());
-
-    }
-
+    //Sort the list
     this->doSortList(ui->m_SortedListWidget,m_bAscendOrder);
 }
 
 ////////////////////////////////
-/// \brief Slot to clear the input list
+/// \brief Slot to clear lists
 ///
-void MainWindow::on_m_ClearInputListButton_pressed()
+void MainWindow::on_m_ClearListButton_pressed()
 {
     //clear the input list
-    ui->m_InputListWidget->clear();
+    this->doClearList(ui->m_InputListWidget);
+
+    //clear the sorted list
+    this->doClearList(ui->m_SortedListWidget);
 }
 
 ///////////////////////
@@ -71,6 +67,42 @@ void MainWindow::on_m_DescRadioButton_clicked()
     m_bAscendOrder = false;
 }
 
+///////////////////////
+/// \brief Select if it need to remove same words
+/// \param arg1
+///
+void MainWindow::on_m_KeepOnlyOncecheckBox_stateChanged(int arg1)
+{
+
+}
+
+/////////////////////////////////
+/// \brief Copy the input list into the output one
+/// \param List to be copied
+/// \param new list
+///
+void MainWindow::doCopyList(const QListWidget* const p_pInputList, QListWidget* const p_pOutputList)
+{
+    //Copy items from in to out list
+    for(int idx=0;idx<p_pInputList->count();idx++)
+    {
+        //get an item  from the input list
+        QListWidgetItem* item = p_pInputList->item(idx);
+
+        //copy to the sorted list first
+        p_pOutputList->addItem(item->text());
+
+    }
+}
+
+/////////////////////////
+/// \brief Clear the list provided in param
+/// \param p_pList
+///
+void MainWindow::doClearList(QListWidget* const p_pList)
+{
+    p_pList->clear();
+}
 
 /////////////////////////////////
 /// \brief Action to Sort the list Based on Qt API
@@ -90,3 +122,5 @@ void MainWindow::doSortList(QListWidget* const p_pList, const bool b_AscOrder)
         p_pList->sortItems(Qt::DescendingOrder);
     }
 }
+
+

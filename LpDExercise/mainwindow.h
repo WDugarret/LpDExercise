@@ -19,6 +19,8 @@ public:
     ~MainWindow();
 
 protected:
+    void doCopyList(const QListWidget* const p_pInputList, QListWidget* const p_pOutputList);
+    void doClearList(QListWidget* const p_pList);
     void doSortList(QListWidget* const p_pList, const bool b_AscOrder);
 
 private slots:
@@ -26,11 +28,13 @@ private slots:
 
     void on_m_SortListButton_pressed();
 
-    void on_m_ClearInputListButton_pressed();
+    void on_m_ClearListButton_pressed();
 
     void on_m_AscRadioButton_clicked();
 
     void on_m_DescRadioButton_clicked();
+
+    void on_m_KeepOnlyOncecheckBox_stateChanged(int arg1);
 
 private:
     Ui::MainWindow *ui;
