@@ -20,8 +20,10 @@ public:
 
 protected:
     void doCopyList(const QListWidget* const p_pInputList, QListWidget* const p_pOutputList);
+    void doCopyOnlyOnceInList(const QListWidget* const p_pInputList, QListWidget* const p_pOutputList);
     void doClearList(QListWidget* const p_pList);
     void doSortList(QListWidget* const p_pList, const bool b_AscOrder);
+
 
 private slots:
     void on_m_AddInListButton_pressed();
@@ -40,5 +42,6 @@ private:
     Ui::MainWindow *ui;
 
     bool m_bAscendOrder;
+    bool m_bKeepOnlyOnce;
 };
 #endif // MAINWINDOW_H

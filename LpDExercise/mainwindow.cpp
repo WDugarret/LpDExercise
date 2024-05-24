@@ -5,6 +5,7 @@ MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
     , ui(new Ui::MainWindow)
     , m_bAscendOrder(true)
+    , m_bKeepOnlyOnce(false)
 {
     ui->setupUi(this);
 }
@@ -36,7 +37,16 @@ void MainWindow::on_m_SortListButton_pressed()
     this->doClearList(ui->m_SortedListWidget);
 
     //Let's copy input list to keep it if necessary in a later time
-    this->doCopyList(ui->m_InputListWidget,ui->m_SortedListWidget);
+    //First case => keep only one occurence
+    if(true == m_bKeepOnlyOnce)
+    {
+        this->doCopyOnlyOnceInList(ui->m_InputListWidget,ui->m_SortedListWidget);
+    }
+    //Second case => keep any item
+    else
+    {
+        this->doCopyList(ui->m_InputListWidget,ui->m_SortedListWidget);
+    }
 
     //Sort the list
     this->doSortList(ui->m_SortedListWidget,m_bAscendOrder);
@@ -73,7 +83,16 @@ void MainWindow::on_m_DescRadioButton_clicked()
 ///
 void MainWindow::on_m_KeepOnlyOncecheckBox_stateChanged(int arg1)
 {
-
+    //when value is 0 then do not keep only once
+    if(0U == arg1)
+    {
+        m_bKeepOnlyOnce = false;
+    }
+    //otherwise clean multiple occurences
+    else
+    {
+        m_bKeepOnlyOnce = true;
+    }
 }
 
 /////////////////////////////////
@@ -89,9 +108,44 @@ void MainWindow::doCopyList(const QListWidget* const p_pInputList, QListWidget* 
         //get an item  from the input list
         QListWidgetItem* item = p_pInputList->item(idx);
 
-        //copy to the sorted list first
+        //copy to the output list
         p_pOutputList->addItem(item->text());
 
+    }
+}
+
+/////////////////////////////////
+/// \brief Action to remove multiple occurence
+/// \param list to be analyse
+///
+void MainWindow::doCopyOnlyOnceInList(const QListWidget* const p_pInputList, QListWidget* const p_pOutputList)
+{
+    //Copy items from in to out list
+    for(int idx=0;idx<p_pInputList->count();idx++)
+    {
+        //get an item from the list
+        QListWidgetItem* item = p_pInputList->item(idx);
+
+        //always copy first item
+        if(0U == idx)
+        {
+            //copy to the sorted list
+            p_pOutputList->addItem(item->text());
+        }
+        else
+        {
+            //Let's find an occurence of the current item
+            QList<QListWidgetItem*> l_FoundInList =p_pOutputList->findItems(item->text(),Qt::MatchExactly);
+
+            //if received list is not empty then an occurence is already in the list => do nothing
+            //but if list is empty then add this new item
+            if(true == l_FoundInList.empty())
+            {
+                //copy to the sorted list
+                p_pOutputList->addItem(item->text());
+            }
+
+        }
     }
 }
 
