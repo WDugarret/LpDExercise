@@ -17,6 +17,11 @@ public:
     MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
 
+private slots:
+    void on_m_AddInListButton_pressed();
+
+    void on_m_SortListButton_pressed();
+
 private:
     Ui::MainWindow *ui;
 };

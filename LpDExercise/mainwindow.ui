@@ -13,7 +13,92 @@
   <property name="windowTitle">
    <string>MainWindow</string>
   </property>
-  <widget class="QWidget" name="centralwidget"/>
+  <widget class="QWidget" name="centralwidget">
+   <widget class="QGroupBox" name="m_UserInGroupBox">
+    <property name="geometry">
+     <rect>
+      <x>100</x>
+      <y>50</y>
+      <width>301</width>
+      <height>91</height>
+     </rect>
+    </property>
+    <property name="title">
+     <string>User Input</string>
+    </property>
+    <widget class="QTextEdit" name="m_UserInEditText">
+     <property name="geometry">
+      <rect>
+       <x>30</x>
+       <y>30</y>
+       <width>131</width>
+       <height>31</height>
+      </rect>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="m_AddInListButton">
+     <property name="geometry">
+      <rect>
+       <x>190</x>
+       <y>30</y>
+       <width>93</width>
+       <height>29</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Add</string>
+     </property>
+    </widget>
+   </widget>
+   <widget class="QGroupBox" name="m_ProcessGroupBox">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>150</y>
+      <width>751</width>
+      <height>351</height>
+     </rect>
+    </property>
+    <property name="title">
+     <string>Processing</string>
+    </property>
+    <widget class="QPushButton" name="m_SortListButton">
+     <property name="geometry">
+      <rect>
+       <x>310</x>
+       <y>210</y>
+       <width>93</width>
+       <height>29</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Sort</string>
+     </property>
+    </widget>
+    <widget class="QListWidget" name="m_SortedListWidget">
+     <property name="geometry">
+      <rect>
+       <x>450</x>
+       <y>50</y>
+       <width>231</width>
+       <height>241</height>
+      </rect>
+     </property>
+    </widget>
+    <widget class="QListWidget" name="m_InputListWidget">
+     <property name="geometry">
+      <rect>
+       <x>40</x>
+       <y>50</y>
+       <width>231</width>
+       <height>241</height>
+      </rect>
+     </property>
+    </widget>
+   </widget>
+   <zorder>m_ProcessGroupBox</zorder>
+   <zorder>m_UserInGroupBox</zorder>
+  </widget>
   <widget class="QMenuBar" name="menubar">
    <property name="geometry">
     <rect>

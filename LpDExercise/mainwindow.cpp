@@ -12,3 +12,15 @@ MainWindow::~MainWindow()
 {
     delete ui;
 }
+
+void MainWindow::on_m_AddInListButton_pressed()
+{
+
+}
+
+
+void MainWindow::on_m_SortListButton_pressed()
+{
+
+}
+
