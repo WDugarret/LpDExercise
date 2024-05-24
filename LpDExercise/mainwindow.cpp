@@ -36,7 +36,7 @@ void MainWindow::on_m_SortListButton_pressed()
     //initialize the sorted list
     this->doClearList(ui->m_SortedListWidget);
 
-    //Let's copy input list to keep it if necessary in a later time
+    //Let's copy the input list to keep it
     //First case => keep only one occurence
     if(true == m_bKeepOnlyOnce)
     {
@@ -165,12 +165,12 @@ void MainWindow::doClearList(QListWidget* const p_pList)
 ///
 void MainWindow::doSortList(QListWidget* const p_pList, const bool b_AscOrder)
 {
-    //Sorting is request to be ascending
+    //Sorting is requested to be ascending
     if(true == b_AscOrder)
     {
         p_pList->sortItems(Qt::AscendingOrder);
     }
-    //Sorting is request to be descending
+    //Sorting is requested to be descending
     else
     {
         p_pList->sortItems(Qt::DescendingOrder);
